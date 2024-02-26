@@ -3,7 +3,7 @@
 
 deployment "simple" {
   variables = {
-    prefix           = "simbple"
+    prefix           = "simple"
     instances        = 1
   }
 }
