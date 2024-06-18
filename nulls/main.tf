@@ -14,6 +14,10 @@ variable "pet" {
   type = string
 }
 
+variable "otherpet" {
+    type = string
+}
+
 variable "instances" {
   type = number
 }
