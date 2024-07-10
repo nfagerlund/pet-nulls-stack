@@ -44,8 +44,8 @@ data "null_data_source" "everyone" {
   inputs = {
     this = random_pet.this.id
     that = random_pet.that.id
-    them = random_pet.them[*].id
-    the_other_thing = random_integer.numbor.result
+    them = join(", ", random_pet.them[*].id)
+    the_other_thing = tostring(random_integer.numbor.result)
   }
 }
 
