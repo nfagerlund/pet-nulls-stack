@@ -61,3 +61,6 @@ output "number" {
   value = random_integer.numbor.result
 }
 
+output "everyone" {
+  value = data.null_data_source.everyone.outputs
+}
