@@ -7,6 +7,11 @@ terraform {
       source = "hashicorp/random"
       version = "3.3.2"
     }
+
+    null = {
+      source = "hashicorp/null"
+      version = "3.1.1"
+    }
   }
 }
 
@@ -35,6 +40,15 @@ resource "random_pet" "that" {
   length = 3
 }
 
+data "null_data_source" "everyone" {
+  inputs = {
+    this = random_pet.this.id
+    that = random_pet.that.id
+    them = join(", ", random_pet.them[*].id)
+    the_other_thing = tostring(random_integer.numbor.result)
+  }
+}
+
 output "name" {
   value = random_pet.this.id
 }
@@ -47,3 +61,6 @@ output "number" {
   value = random_integer.numbor.result
 }
 
+output "everyone" {
+  value = data.null_data_source.everyone.outputs
+}
