@@ -10,6 +10,10 @@ store "tfvars" "stuff" {
   path = "./stuff.tfvars"
 }
 
+store "varset" "unused" {
+  id = "varset-fakefakefakefa"
+}
+
 deployment "simple" {
   inputs = {
     prefix           = store.tfvars.stuff.simple_prefix
