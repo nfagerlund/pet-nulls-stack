@@ -6,9 +6,13 @@ store "varset" "stacktest" {
   id = "varset-Jf29vay69UdGQWbH"
 }
 
+store "tfvars" "stuff" {
+  path = "./stuff.tfvars"
+}
+
 deployment "simple" {
   inputs = {
-    prefix           = "simple"
+    prefix           = store.tfvars.stuff.simple_prefix
     instances        = 1
   }
 }
