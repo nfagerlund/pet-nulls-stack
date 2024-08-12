@@ -9,6 +9,10 @@ variable "instances" {
   type = number
 }
 
+variable "tfcoremock_resource_dir" {
+   type = string
+}
+
 required_providers {
   random = {
     source  = "hashicorp/random"
@@ -19,10 +23,19 @@ required_providers {
     source  = "hashicorp/null"
     version = "~> 3.2.2"
   }
+
+  tfcoremock = {
+    source = "hashicorp/tfcoremock"
+    version = "~> 0.2.0"
+  }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
+provider "tfcoremock" "this" {
+  use_only_state = true
+  resource_directory = var.tfcoremock_resource_dir
+}
 
 component "pet" {
   source = "./pet"
