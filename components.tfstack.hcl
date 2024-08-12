@@ -33,8 +33,10 @@ required_providers {
 provider "random" "this" {}
 provider "null" "this" {}
 provider "tfcoremock" "this" {
-  use_only_state = true
-  resource_directory = var.tfcoremock_resource_dir
+  config {
+    use_only_state = true
+    resource_directory = var.tfcoremock_resource_dir
+  }
 }
 
 component "pet" {
