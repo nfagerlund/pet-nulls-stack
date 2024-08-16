@@ -4,6 +4,7 @@
 # TODO: change this to point at a localdev varset
 store "varset" "stacktest" {
   id = "varset-Jf29vay69UdGQWbH"
+  category = "env"
 }
 
 store "tfvars" "stuff" {
@@ -12,6 +13,7 @@ store "tfvars" "stuff" {
 
 store "varset" "unused" {
   id = "varset-fakefakefakefa"
+  category = "terraform"
 }
 
 deployment "simple" {
