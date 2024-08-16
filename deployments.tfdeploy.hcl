@@ -10,9 +10,9 @@ store "tfvars" "stuff" {
   path = "./stuff.tfvars"
 }
 
-# store "varset" "unused" {
-#   id = "varset-fakefakefakefa"
-# }
+store "varset" "unused" {
+  id = "varset-fakefakefakefa"
+}
 
 deployment "simple" {
   inputs = {
@@ -24,7 +24,7 @@ deployment "simple" {
 
 deployment "complex" {
   inputs = {
-#     prefix           = store.varset.stacktest.complex_prefix
+    prefix           = store.varset.stacktest.complex_prefix
     prefix = "temporary-nonstore-prefix"
     tfcoremock_resource_dir = "default-constant-dir"
     instances        = 3
