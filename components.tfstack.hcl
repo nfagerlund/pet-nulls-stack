@@ -35,7 +35,7 @@ provider "random" "this" {}
 provider "null" "this" {}
 provider "tfe" "this" {
   config {
-    hostname = "https://tfe-zone-b0c8608c.ngrok.io/"
+    hostname = "tfe-zone-b0c8608c.ngrok.io"
     token = var.tfe_token
   }
 }
