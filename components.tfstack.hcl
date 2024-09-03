@@ -19,10 +19,34 @@ required_providers {
     source  = "hashicorp/null"
     version = "~> 3.2.2"
   }
+
+  tfe = {
+    source = "hashicorp/tfe"
+    version = "0.58.1"
+  }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
+provider "tfe" "this" {
+  config {
+    hostname = "https://tfe-zone-b0c8608c.ngrok.io/"
+    token = var.tfe_token
+  }
+}
+
+component "tfe_project" {
+  source = "./tfe_project"
+
+  inputs = {
+    project_name = component.pet.name
+    workspace_count = component.pet.number
+  }
+
+  provider = {
+    tfe = provider.tfe.this
+  }
+}
 
 component "pet" {
   source = "./pet"
