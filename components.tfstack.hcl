@@ -43,7 +43,7 @@ component "tfe_project" {
     workspace_count = component.pet.number
   }
 
-  provider = {
+  providers = {
     tfe = provider.tfe.this
   }
 }
