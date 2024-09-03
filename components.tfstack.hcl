@@ -9,6 +9,10 @@ variable "instances" {
   type = number
 }
 
+variable "tfe_token" {
+  type = string
+}
+
 required_providers {
   random = {
     source  = "hashicorp/random"
