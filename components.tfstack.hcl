@@ -11,6 +11,7 @@ variable "instances" {
 
 variable "tfe_token" {
   type = string
+  ephemeral = true
 }
 
 required_providers {
