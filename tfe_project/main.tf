@@ -27,7 +27,7 @@ resource "tfe_project" "this" {
 resource "tfe_workspace" "these" {
   count = var.workspace_count
 
-  name = "some_workspace${count.index}"
+  name = "${var.project_name}-ws-${count.index}"
   organization = local.org
   project_id = tfe_project.this.id
   auto_apply = true
