@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: MPL-2.0
 
 store "varset" "stack_dump" {
-  id = "varset-XmNVfWCAh4SXvC9R"
-  category = "env"
+  id = "varset-FBiKWEuFBk7aWd6g"
+  category = "terraform"
 }
 
 deployment "simple" {
