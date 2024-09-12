@@ -2,14 +2,14 @@
 # SPDX-License-Identifier: MPL-2.0
 
 deployment "simple" {
-  variables = {
+  inputs = {
     prefix           = "simple"
     instances        = 1
   }
 }
 
 deployment "complex" {
-  variables = {
+  inputs = {
     prefix           = "complex"
     instances        = 3
   }
