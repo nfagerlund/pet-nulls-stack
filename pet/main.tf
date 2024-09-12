@@ -64,3 +64,8 @@ output "number" {
 output "everyone" {
   value = data.null_data_source.everyone.outputs
 }
+
+# Errors at plan runtime hopefully
+output "garbage" {
+  value = jsondecode("asoenthuaseotnhuasntehuoa")
+}
