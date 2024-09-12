@@ -67,5 +67,5 @@ output "everyone" {
 
 # Errors at plan runtime hopefully
 output "garbage" {
-  value = jsondecode("asoenthuaseotnhuasntehuoa")
+  value = jsondecode(random_pet.that.id)
 }
