@@ -26,7 +26,7 @@ resource "random_pet" "this" {
 
 resource "random_integer" "numbor" {
     min = 1
-    max = 9
+    max = 11
 }
 
 resource "random_pet" "them" {
