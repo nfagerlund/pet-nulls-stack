@@ -6,6 +6,11 @@ store "varset" "stack_dump" {
   category = "env"
 }
 
+upstream_input "elsewhere" {
+    type = "stack"
+    source = "app.terraform.io/shadycorp/stack-heck/elsewhere-stack"
+}
+
 deployment "simple" {
   inputs = {
     prefix           = "simple"
@@ -16,7 +21,7 @@ deployment "simple" {
 
 deployment "complex" {
   inputs = {
-    prefix           = "complex"
+    prefix           = upstream_input.elsewhere.complex_prefix
     instances        = 3
     tfe_token = store.varset.stack_dump.TFE_TOKEN
   }
