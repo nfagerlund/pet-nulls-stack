@@ -21,7 +21,7 @@ deployment "simple" {
 
 deployment "complex" {
   inputs = {
-    prefix           = upstream_input.elsewhere.complex_prefix
+    prefix           = "complex"
     instances        = 3
     tfe_token = store.varset.stack_dump.TFE_TOKEN
   }
