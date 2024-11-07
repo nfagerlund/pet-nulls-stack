@@ -3,7 +3,7 @@
 
 deployment "simple" {
   inputs = {
-    prefix           = "simple"
+    prefix           = "skrimple"
     instances        = 1
   }
 }
@@ -11,6 +11,6 @@ deployment "simple" {
 deployment "complex" {
   inputs = {
     prefix           = "complekxt"
-    instances        = 4
+    instances        = 5
   }
 }
