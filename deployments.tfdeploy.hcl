@@ -8,6 +8,13 @@ deployment "simple" {
   }
 }
 
+deployment "doomed" {
+  inputs = {
+    prefix           = "byeeeeeee"
+    instances        = 1
+  }
+}
+
 deployment "complex" {
   inputs = {
     prefix           = "complekxt"
