@@ -3,21 +3,21 @@
 
 deployment "simple" {
   inputs = {
-    prefix           = "skrimple"
+    prefix           = "skrimple?"
     instances        = 1
   }
 }
 
 deployment "doomed" {
   inputs = {
-    prefix           = "byeeeeeee"
+    prefix           = "byeeeeeee."
     instances        = 1
   }
 }
 
 deployment "complex" {
   inputs = {
-    prefix           = "complekxt"
+    prefix           = "complex"
     instances        = 5
   }
 }
