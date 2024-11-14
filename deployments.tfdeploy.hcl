@@ -3,7 +3,7 @@
 
 deployment "simple" {
   inputs = {
-    prefix           = "skrimple?"
+    prefix           = "skrimple?."
     instances        = 1
   }
 }
