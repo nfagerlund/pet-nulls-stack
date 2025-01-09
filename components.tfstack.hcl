@@ -19,10 +19,16 @@ required_providers {
     source  = "hashicorp/null"
     version = "~> 3.2.2"
   }
+
+  bombnull = {
+      source = "app.terraform.io/nicktech/bombnull"
+      version = "4.1.3"
+  }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
+provider "bombnull" "this" {}
 
 component "pet" {
   source = "./pet"
@@ -34,6 +40,7 @@ component "pet" {
   providers = {
     random = provider.random.this
     null = provider.null.this
+    bombnull = provider.bombnull.this
   }
 }
 
