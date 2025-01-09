@@ -1,6 +1,29 @@
 # This file is maintained automatically by "tfstacks providers lock".
 # Manual edits may be lost in future updates.
 
+provider "app.terraform.io/nicktech/bombnull" {
+  version = "4.1.3"
+  hashes = [
+    "h1:8XlJVWF2yIzwV2CrSSl/36W0b13A1dCNJk11JD1yedg=",
+    "h1:Hq+IwKFrs/pFVEreU94HJsN2/+Fev49ZmzPXVDsr3sU=",
+    "zh:19f9cbe2a5b0c80f71b24e81f6cf8240fbc0be06d053b45d53c23d207f4845e4",
+    "zh:2d2000adf95c47a51d747b212b7726d2f394de68400c051dc05eae3a7ad16107",
+    "zh:46833e5f77ff89397b81b8f66e3750e6f9a839edb55cab499bd8370335f4d19d",
+    "zh:5bbd45ab12597d19048d660e8eb76a276f43704bc1718f2d9a80ad6bab7aed61",
+    "zh:6b2d29e27e04dcb9586a92e3acaa38f81dbecff254147094d172a1f0f584e424",
+    "zh:6f132dfc671d408bafaa03ae4ed8bfc9e64984264ccb5268528f7f0e52c8ef6d",
+    "zh:73eaee8b79eaea027583dfb8a13b56868b379e25258f630168a501864002c008",
+    "zh:75f65eda237c487428f343004ed5da758e52f6d9b76aa7f00c5224b30344ec43",
+    "zh:78d5eefdd9e494defcb3c68d282b8f96630502cac21d1ea161f53cfe9bb483b3",
+    "zh:88e993fc0f1b14bc36b0e507b75fe67a114dd8efd59c6f49b6f1541ac4d184e0",
+    "zh:8a4c784abc4d1abf64e31d1b8e07f77981ea77914ecc077eb0c48237f633f393",
+    "zh:94454954799a6fe9868f3d7fb3ab23b71c3944ad6390f2c7b60fd4f84dab1d0e",
+    "zh:94b2994409d3a633d0b519b4eb8594df3e49a8de20c3c83373dd9cc029587030",
+    "zh:953a6859d6fcf5c67b5e028753070a091f5e3ff6e924f4ce2f8e82037c23429a",
+    "zh:cc0f23c4a2029f0c2e0880cfc8c6b0333e71af25ad47c6eb1f6b0d9ad411d0e0",
+  ]
+}
+
 provider "registry.terraform.io/hashicorp/null" {
   version = "3.2.2"
   hashes = [
