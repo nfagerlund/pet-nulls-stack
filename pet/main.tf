@@ -12,6 +12,11 @@ terraform {
       source = "hashicorp/null"
       version = "3.1.1"
     }
+
+    bombnull = {
+      source = "app.terraform.io/nicktech/bombnull"
+      version = "4.1.3"
+    }
   }
 }
 
@@ -46,6 +51,13 @@ data "null_data_source" "everyone" {
     that = random_pet.that.id
     them = join(", ", random_pet.them[*].id)
     the_other_thing = tostring(random_integer.numbor.result)
+  }
+}
+
+# This resource explodes on destroy, the first time.
+resource "bombnull_resource" "da_bomb" {
+  triggers = {
+    val = random_pet.this.id
   }
 }
 
