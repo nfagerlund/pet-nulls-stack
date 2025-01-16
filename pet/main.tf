@@ -59,7 +59,6 @@ output "latename" {
 
 output "number" {
   value = random_integer.numbor.result
-  type = number
 }
 
 output "everyone" {
