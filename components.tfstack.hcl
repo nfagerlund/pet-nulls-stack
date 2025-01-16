@@ -86,5 +86,5 @@ output "everyone" {
     description = "yep"
     value = component.pet.everyone
     sensitive = true
-    type = map(string)
+    type = "map(string)"
 }
