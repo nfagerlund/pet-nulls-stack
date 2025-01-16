@@ -75,3 +75,15 @@ component "nails" {
     null = provider.null.this
   }
 }
+
+output "pet-latename" {
+    description = "yeah"
+    value = component.pet.latename
+    type = string
+}
+
+output "everyone" {
+    description = "yep"
+    value = component.pet.everyone
+    sensitive = true
+}
