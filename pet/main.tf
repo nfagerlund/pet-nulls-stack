@@ -59,8 +59,10 @@ output "latename" {
 
 output "number" {
   value = random_integer.numbor.result
+  type = number
 }
 
 output "everyone" {
   value = data.null_data_source.everyone.outputs
+  sensitive = true
 }
