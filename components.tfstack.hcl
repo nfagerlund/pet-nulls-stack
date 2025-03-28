@@ -9,6 +9,10 @@ variable "instances" {
   type = number
 }
 
+variable "nulls_instances" {
+  type = list(string)
+}
+
 required_providers {
   random = {
     source  = "hashicorp/random"
@@ -39,9 +43,10 @@ component "pet" {
 
 component "nulls" {
   source = "./nulls"
+  for_each = toset(var.nulls_instances)
 
   inputs = {
-    pet       = component.pet.name
+    pet       = "${component.pet.name}--${each.key}"
     instances = var.instances
   }
 
