@@ -5,7 +5,7 @@ deployment "simple" {
   inputs = {
     prefix           = "skrimple"
     instances        = 1
-    nulls_instances = ["hey"]
+    nulls_instances = []
   }
 }
 
@@ -13,6 +13,6 @@ deployment "complex" {
   inputs = {
     prefix           = "complekxt"
     instances        = 5
-    nulls_instances = ["hey", "lets", "go"]
+    nulls_instances = ["lets"]
   }
 }

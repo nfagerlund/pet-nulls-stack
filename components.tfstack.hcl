@@ -13,6 +13,10 @@ variable "nulls_instances" {
   type = list(string)
 }
 
+locals {
+  killnulls = ["hey", "go"]
+}
+
 required_providers {
   random = {
     source  = "hashicorp/random"
@@ -98,6 +102,22 @@ output "everyone" {
 removed {
   from = component.nulls["ho"]
   source = "./nulls"
+
+  lifecycle {
+    destroy = true
+  }
+
+  providers = {
+    null = provider.null.this
+  }
+}
+
+# Okay, that worked! Now let's switch the agent to the updated one and try this...
+removed {
+  from = component.nulls[each.key]
+  source = "./nulls"
+
+  for_each = toset(local.killnulls)
 
   lifecycle {
     destroy = true
