@@ -96,7 +96,7 @@ output "everyone" {
 
 # Confirm old removal style ain't broken
 removed {
-  from = component.nulls["hey"]
+  from = component.nulls["ho"]
   source = "./nulls"
 
   lifecycle {

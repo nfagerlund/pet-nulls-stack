@@ -13,6 +13,6 @@ deployment "complex" {
   inputs = {
     prefix           = "complekxt"
     instances        = 5
-    nulls_instances = ["hey", "ho", "lets", "go"]
+    nulls_instances = ["hey", "lets", "go"]
   }
 }
