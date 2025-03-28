@@ -93,3 +93,17 @@ output "everyone" {
     sensitive = true
     type = map(string)
 }
+
+# Confirm old removal style ain't broken
+removed {
+  from = component.nulls["hey"]
+  source = "./nulls"
+
+  lifecycle {
+    destroy = true
+  }
+
+  providers = {
+    null = provider.null.this
+  }
+}
