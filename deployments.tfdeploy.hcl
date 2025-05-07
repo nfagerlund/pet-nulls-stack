@@ -13,4 +13,16 @@ deployment "complex" {
     prefix           = "complex"
     instances        = 4
   }
+  deployment_group = deployment_group.yolo
+}
+
+deployment_group "yolo" {
+  auto_approve_checks = [deployment_auto_approve.yolo]
+}
+
+deployment_auto_approve "yolo" {
+  check {
+    condition = true
+    reason = "you only live once!!!!"
+  }
 }
