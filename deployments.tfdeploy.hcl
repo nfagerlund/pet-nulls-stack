@@ -8,6 +8,10 @@ deployment "simple" {
   }
 }
 
+locals {
+  woooo = true
+}
+
 deployment "complex" {
   inputs = {
     prefix           = "complex"
@@ -22,7 +26,7 @@ deployment_group "yolo" {
 
 deployment_auto_approve "yolo" {
   check {
-    condition = true
+    condition = local.woooo
     reason = "you only live once!!!!"
   }
 }
