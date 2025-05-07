@@ -6,6 +6,7 @@ deployment "simple" {
     prefix           = "simple"
     instances        = 1
   }
+  deployment_group = deployment_group.yolo
 }
 
 locals {
