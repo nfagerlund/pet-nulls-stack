@@ -6,6 +6,7 @@ deployment "simple" {
     prefix           = "simple"
     instances        = 1
   }
+  destroy = true
 }
 
 deployment "complex" {
@@ -13,6 +14,7 @@ deployment "complex" {
     prefix           = "complex"
     instances        = 4
   }
+  destroy = true
 }
 
 publish_output "complex_latepet" {
