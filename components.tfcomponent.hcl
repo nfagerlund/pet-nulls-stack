@@ -75,3 +75,8 @@ component "nails" {
     null = provider.null.this
   }
 }
+
+output "global_pet" {
+    value = component.pet.latename
+    type = string
+}
