@@ -13,4 +13,5 @@ deployment "complex" {
     prefix           = "complex"
     instances        = 4
   }
+  destroy = true
 }
