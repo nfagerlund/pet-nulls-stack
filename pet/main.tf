@@ -14,7 +14,7 @@ terraform {
     }
 
     bombnull = {
-      source = "app.terraform.io/nicktech/bombnull"
+      source = "tfe-zone-b0c8608c.ngrok.io/gacorp/bombnull"
       version = "4.1.3"
     }
   }
