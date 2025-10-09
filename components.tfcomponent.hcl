@@ -75,3 +75,12 @@ component "nails" {
     null = provider.null.this
   }
 }
+
+removed {
+  source = "./nulls"
+  from = component.nails
+
+  providers = {
+      null = provider.null.this
+  }
+}
