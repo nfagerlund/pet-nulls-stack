@@ -12,6 +12,11 @@ terraform {
       source = "hashicorp/null"
       version = "3.1.1"
     }
+
+    local = {
+      source = "hashicorp/local"
+      version = "2.6.1"
+    }
   }
 }
 
@@ -63,4 +68,21 @@ output "number" {
 
 output "everyone" {
   value = data.null_data_source.everyone.outputs
+}
+
+output "module_path" {
+    value = path.module
+}
+
+resource "random_pet" "module_path" {
+    prefix = path.module
+    length = 3
+}
+
+data "local_file" "petfile" {
+    filename = "${path.module}/petfile.txt"
+}
+resource "random_pet" "module_file" {
+    prefix = data.local_file.petfile.content
+    length = 3
 }

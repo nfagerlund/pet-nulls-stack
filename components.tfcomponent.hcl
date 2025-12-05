@@ -19,10 +19,16 @@ required_providers {
     source  = "hashicorp/null"
     version = "~> 3.2.2"
   }
+
+    local = {
+      source = "hashicorp/local"
+      version = "2.6.1"
+    }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
+provider "local" "this" {}
 
 component "pet" {
   source = "./pet"
@@ -34,6 +40,7 @@ component "pet" {
   providers = {
     random = provider.random.this
     null = provider.null.this
+    local = provider.local.this
   }
 }
 
@@ -78,5 +85,10 @@ component "nails" {
 
 output "global_pet" {
     value = component.pet.latename
+    type = string
+}
+
+output "global_petmodulepath" {
+    value = component.pet.module_path
     type = string
 }
