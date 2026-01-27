@@ -10,7 +10,7 @@ deployment "simple" {
 
 deployment "complex" {
   inputs = {
-    prefix           = "upstream_input.elsewhere.complex_latepet"
+    prefix           = upstream_input.elsewhere.complex_latepet
     instances        = 4
   }
 }
