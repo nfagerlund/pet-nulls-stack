@@ -10,9 +10,14 @@ deployment "simple" {
 
 deployment "complex" {
   inputs = {
-    prefix           = "complex"
+    prefix           = "upstream_input.elsewhere.complex_latepet"
     instances        = 4
   }
+}
+
+upstream_input "elsewhere" {
+    type = "stack"
+    source = "app.terraform.io/gacorp/stack-heck/jan26-upstream"
 }
 
 publish_output "complex_latepet" {
