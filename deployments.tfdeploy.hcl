@@ -24,3 +24,8 @@ publish_output "simple_latepet" {
     description = "deferred pet id from simple"
     value = deployment.simple.global_pet
 }
+
+publish_output "complex_everyone" {
+    description = "the everyone from complex pet"
+    value = deployment.complex.global_everyone
+}

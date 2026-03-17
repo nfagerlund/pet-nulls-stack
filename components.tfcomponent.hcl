@@ -80,3 +80,8 @@ output "global_pet" {
     value = component.pet.latename
     type = string
 }
+
+output "global_everyone" {
+    value = component.pet.everyone
+    type = map(string)
+}
