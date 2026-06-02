@@ -1,4 +1,4 @@
-# This file is maintained automatically by "terraform stacks providers lock".
+# This file is maintained automatically by "terraform stacks providers-lock".
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/null" {

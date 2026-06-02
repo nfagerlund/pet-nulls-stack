@@ -25,7 +25,7 @@ provider "random" "this" {}
 provider "null" "this" {}
 
 component "pet" {
-  source = "./pet"
+  source = "../pet"
 
   inputs = {
     prefix = var.prefix
@@ -38,7 +38,7 @@ component "pet" {
 }
 
 component "nulls" {
-  source = "./nulls"
+  source = "../nulls"
 
   inputs = {
     pet       = component.pet.name
@@ -51,7 +51,7 @@ component "nulls" {
 }
 
 component "nils" {
-  source = "./nulls"
+  source = "../nulls"
 
   inputs = {
     pet = component.pet.latename
@@ -64,7 +64,7 @@ component "nils" {
 }
 
 component "nails" {
-  source = "./nulls"
+  source = "../nulls"
 
   inputs = {
     pet       = component.pet.name
