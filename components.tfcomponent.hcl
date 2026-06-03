@@ -12,12 +12,12 @@ variable "instances" {
 required_providers {
   random = {
     source  = "hashicorp/random"
-    version = "~> 3.5.1"
+    version = "~> 3.9.0"
   }
 
   null = {
     source  = "hashicorp/null"
-    version = "~> 3.2.2"
+    version = "~> 3.3.0"
   }
 }
 
