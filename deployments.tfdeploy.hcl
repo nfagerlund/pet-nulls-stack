@@ -91,6 +91,7 @@ deployment "simple8" {
     prefix           = "simple"
     instances        = 1
   }
+  deployment_group = deployment_group.cautious
 }
 
 deployment "simple9" {
@@ -98,6 +99,7 @@ deployment "simple9" {
     prefix           = "simple"
     instances        = 1
   }
+  deployment_group = deployment_group.normal
 }
 
 deployment "simple10" {
@@ -105,6 +107,7 @@ deployment "simple10" {
     prefix           = "simple"
     instances        = 1
   }
+  deployment_group = deployment_group.normal
 }
 
 deployment "simple11" {
@@ -112,6 +115,7 @@ deployment "simple11" {
     prefix           = "simple"
     instances        = 1
   }
+  deployment_group = deployment_group.yolo
 }
 
 deployment "simple12" {
@@ -119,14 +123,23 @@ deployment "simple12" {
     prefix           = "simple"
     instances        = 1
   }
+  deployment_group = deployment_group.yolo
 }
 
+# No explicit deployment group
+deployment "simple13" {
+  inputs = {
+    prefix           = "simple"
+    instances        = 1
+  }
+}
 
 deployment "complex1" {
   inputs = {
     prefix           = "complex"
     instances        = 4
   }
+  deployment_group = deployment_group.yolo
 }
 
 deployment "complex2" {
@@ -134,6 +147,7 @@ deployment "complex2" {
     prefix           = "complenx"
     instances        = 4
   }
+  deployment_group = deployment_group.normal
 }
 
 deployment "complex3" {
@@ -141,6 +155,7 @@ deployment "complex3" {
     prefix           = "complesx"
     instances        = 4
   }
+  deployment_group = deployment_group.cautious
 }
 
 # Each of these gets four simples and a complex.
