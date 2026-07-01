@@ -1,6 +1,10 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+locals {
+  mass_update = "yo"
+}
+
 # Twelve simples
 deployment "simple_bomb_rowdy1" {
   inputs = {
@@ -34,6 +38,7 @@ deployment "simple_bomb_once1" {
     bomb_create = false
     bomb_update = true
     bomb_delete = false
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.yolo
 }
@@ -46,6 +51,7 @@ deployment "simple_bomb_once2" {
     bomb_create = false
     bomb_update = true
     bomb_delete = false
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.normal
 }
@@ -58,6 +64,7 @@ deployment "simple_bomb_once3" {
     bomb_create = false
     bomb_update = true
     bomb_delete = false
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.cautious
 }
@@ -70,6 +77,7 @@ deployment "simple_bomb_once4" {
     bomb_create = false
     bomb_update = true
     bomb_delete = false
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.cautious
 }
@@ -82,6 +90,7 @@ deployment "simple_bomb_once_5" {
     bomb_create = false
     bomb_update = true
     bomb_delete = false
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.cautious
 }
@@ -90,6 +99,7 @@ deployment "simple8" {
   inputs = {
     prefix           = "simple"
     instances        = 1
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.cautious
 }
@@ -98,6 +108,7 @@ deployment "simple9" {
   inputs = {
     prefix           = "simple"
     instances        = 1
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.normal
 }
@@ -106,6 +117,7 @@ deployment "simple10" {
   inputs = {
     prefix           = "simple"
     instances        = 1
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.normal
 }
@@ -114,6 +126,7 @@ deployment "simple11" {
   inputs = {
     prefix           = "simple"
     instances        = 1
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.yolo
 }
@@ -122,6 +135,7 @@ deployment "simple12" {
   inputs = {
     prefix           = "simple"
     instances        = 1
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.yolo
 }
@@ -131,6 +145,7 @@ deployment "simple13" {
   inputs = {
     prefix           = "simple"
     instances        = 1
+    inplace_update = local.mass_update
   }
 }
 
@@ -138,6 +153,7 @@ deployment "complex1" {
   inputs = {
     prefix           = "complex"
     instances        = 4
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.yolo
 }
@@ -146,6 +162,7 @@ deployment "complex2" {
   inputs = {
     prefix           = "complenx"
     instances        = 4
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.normal
 }
@@ -154,6 +171,7 @@ deployment "complex3" {
   inputs = {
     prefix           = "complesx"
     instances        = 4
+    inplace_update = local.mass_update
   }
   deployment_group = deployment_group.cautious
 }
