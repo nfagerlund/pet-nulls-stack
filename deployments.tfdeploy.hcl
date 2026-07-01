@@ -18,7 +18,7 @@ deployment "simple_bomb_rowdy2" {
   inputs = {
     prefix           = "simple2"
     instances        = 1
-    bomb_every_time = false
+    bomb_every_time = true
     bomb_create = true
     bomb_update = true
     bomb_delete = false
@@ -31,7 +31,7 @@ deployment "simple_bomb_once1" {
     prefix           = "simple"
     instances        = 1
     bomb_every_time = false
-    bomb_create = true
+    bomb_create = false
     bomb_update = true
     bomb_delete = false
   }
@@ -43,7 +43,7 @@ deployment "simple_bomb_once2" {
     prefix           = "simple"
     instances        = 1
     bomb_every_time = false
-    bomb_create = true
+    bomb_create = false
     bomb_update = true
     bomb_delete = false
   }
@@ -55,7 +55,7 @@ deployment "simple_bomb_once3" {
     prefix           = "simple"
     instances        = 1
     bomb_every_time = false
-    bomb_create = true
+    bomb_create = false
     bomb_update = true
     bomb_delete = false
   }
@@ -67,7 +67,7 @@ deployment "simple_bomb_once4" {
     prefix           = "simple"
     instances        = 1
     bomb_every_time = false
-    bomb_create = true
+    bomb_create = false
     bomb_update = true
     bomb_delete = false
   }
@@ -79,7 +79,7 @@ deployment "simple_bomb_once_5" {
     prefix           = "simple"
     instances        = 1
     bomb_every_time = false
-    bomb_create = true
+    bomb_create = false
     bomb_update = true
     bomb_delete = false
   }
