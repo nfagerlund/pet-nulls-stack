@@ -19,10 +19,16 @@ required_providers {
     source  = "hashicorp/null"
     version = "~> 3.2.2"
   }
+
+  bombnull = {
+    source = "nfagerlund/bombnull"
+    version = "~> 4.3.0"
+  }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
+provider "bombnull" "this" {}
 
 component "pet" {
   source = "./pet"
@@ -47,6 +53,7 @@ component "nulls" {
 
   providers = {
     null = provider.null.this
+    bombnull = provider.bombnull.this
   }
 }
 
@@ -60,6 +67,7 @@ component "nils" {
 
   providers = {
     null = provider.null.this
+    bombnull = provider.bombnull.this
   }
 }
 
@@ -73,6 +81,7 @@ component "nails" {
 
   providers = {
     null = provider.null.this
+    bombnull = provider.bombnull.this
   }
 }
 
