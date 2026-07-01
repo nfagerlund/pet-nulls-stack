@@ -7,6 +7,11 @@ terraform {
       source = "hashicorp/null"
       version = "3.1.1"
     }
+
+    bombnull = {
+        source = "nfagerlund/bombnull"
+        version = "~> 4.3.0"
+    }
   }
 }
 
