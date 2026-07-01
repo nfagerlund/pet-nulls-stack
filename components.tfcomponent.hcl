@@ -9,6 +9,31 @@ variable "instances" {
   type = number
 }
 
+variable "inplace_update" {
+    type = string
+    default = "heyyy"
+}
+
+variable "bomb_every_time" {
+    type = bool
+    default = false
+}
+
+variable "bomb_create" {
+    type = bool
+    default = false
+}
+
+variable "bomb_update" {
+    type = bool
+    default = false
+}
+
+variable "bomb_delete" {
+    type = bool
+    default = false
+}
+
 required_providers {
   random = {
     source  = "hashicorp/random"
@@ -57,12 +82,12 @@ component "nulls" {
   }
 }
 
-component "nils" {
+component "nails" {
   source = "./nulls"
 
   inputs = {
-    pet = component.pet.latename
-    instances = component.pet.number
+    pet       = component.pet.name
+    instances = var.instances
   }
 
   providers = {
@@ -71,12 +96,16 @@ component "nils" {
   }
 }
 
-component "nails" {
+component "bombs" {
   source = "./nulls"
 
   inputs = {
-    pet       = component.pet.name
-    instances = var.instances
+    pet = component.pet.latename
+    instances = component.pet.number
+    bomb_every_time = var.bomb_every_time
+    bomb_create = var.bomb_create
+    bomb_update = var.bomb_update
+    bomb_delete = var.bomb_delete
   }
 
   providers = {
