@@ -11,8 +11,8 @@ deployment "simple_bomb_rowdy1" {
     prefix           = "simple"
     instances        = 1
     bomb_every_time = true
-    bomb_create = true
-    bomb_update = true
+    bomb_create = false
+    bomb_update = false
     bomb_delete = false
   }
   deployment_group = deployment_group.yolo
@@ -23,8 +23,8 @@ deployment "simple_bomb_rowdy2" {
     prefix           = "simple2"
     instances        = 1
     bomb_every_time = true
-    bomb_create = true
-    bomb_update = true
+    bomb_create = false
+    bomb_update = false
     bomb_delete = false
   }
   deployment_group = deployment_group.normal
@@ -36,7 +36,7 @@ deployment "simple_bomb_once1" {
     instances        = 1
     bomb_every_time = false
     bomb_create = false
-    bomb_update = true
+    bomb_update = false
     bomb_delete = false
     inplace_update = local.mass_update
   }
@@ -49,7 +49,7 @@ deployment "simple_bomb_once2" {
     instances        = 1
     bomb_every_time = false
     bomb_create = false
-    bomb_update = true
+    bomb_update = false
     bomb_delete = false
     inplace_update = local.mass_update
   }
@@ -62,7 +62,7 @@ deployment "simple_bomb_once3" {
     instances        = 1
     bomb_every_time = false
     bomb_create = false
-    bomb_update = true
+    bomb_update = false
     bomb_delete = false
     inplace_update = local.mass_update
   }
@@ -75,7 +75,7 @@ deployment "simple_bomb_once4" {
     instances        = 1
     bomb_every_time = false
     bomb_create = false
-    bomb_update = true
+    bomb_update = false
     bomb_delete = false
     inplace_update = local.mass_update
   }
@@ -88,7 +88,7 @@ deployment "simple_bomb_once_5" {
     instances        = 1
     bomb_every_time = false
     bomb_create = false
-    bomb_update = true
+    bomb_update = false
     bomb_delete = false
     inplace_update = local.mass_update
   }
