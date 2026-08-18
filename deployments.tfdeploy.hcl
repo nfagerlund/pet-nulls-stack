@@ -164,5 +164,5 @@ publish_output "complex_latepet" {
 
 publish_output "simple_latepet" {
     description = "deferred pet id from simple"
-    value = deployment.simple10.global_pet
+    value = deployment.simple13.global_pet
 }
