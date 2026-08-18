@@ -95,50 +95,6 @@ deployment "simple_bomb_once_5" {
   deployment_group = deployment_group.cautious
 }
 
-deployment "simple8" {
-  inputs = {
-    prefix           = "simple"
-    instances        = 1
-    inplace_update = local.mass_update
-  }
-  deployment_group = deployment_group.cautious
-}
-
-deployment "simple9" {
-  inputs = {
-    prefix           = "simple"
-    instances        = 1
-    inplace_update = local.mass_update
-  }
-  deployment_group = deployment_group.normal
-}
-
-deployment "simple10" {
-  inputs = {
-    prefix           = "simple"
-    instances        = 1
-    inplace_update = local.mass_update
-  }
-  deployment_group = deployment_group.normal
-}
-
-deployment "simple11" {
-  inputs = {
-    prefix           = "simple"
-    instances        = 1
-    inplace_update = local.mass_update
-  }
-  deployment_group = deployment_group.yolo
-}
-
-deployment "simple12" {
-  inputs = {
-    prefix           = "simple"
-    instances        = 1
-    inplace_update = local.mass_update
-  }
-  deployment_group = deployment_group.yolo
-}
 
 # No explicit deployment group
 deployment "simple13" {
