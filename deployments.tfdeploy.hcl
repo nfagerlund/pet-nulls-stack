@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 locals {
-  mass_update = "yo"
+  mass_update = "yoooooooooo"
 }
 
 # Twelve simples
