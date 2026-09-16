@@ -19,10 +19,32 @@ required_providers {
     source  = "hashicorp/null"
     version = "~> 3.2.2"
   }
+
+  tls = {
+    source = "hashicorp/tls"
+    version = "~> 4.4.1"
+  }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
+provider "tls" "this" {
+    proxy {
+        url = component.pet.name
+    }
+}
+
+component "coffee" {
+    source = "./coffee"
+    inputs = {
+        instances = component.pet.number
+        drink_names = toset([component.pet.name])
+    }
+
+    providers = {
+        tls = provider.tls.this
+    }
+}
 
 component "pet" {
   source = "./pet"
