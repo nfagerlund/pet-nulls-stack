@@ -1,8 +1,8 @@
 terraform {
   required_providers {
-    tls = {
-      source = "hashicorp/tls"
-      version = "~> 4.4.1"
+    helm = {
+        source = "hashicorp/helm"
+        version = "2.17.0"
     }
   }
 }
@@ -15,19 +15,41 @@ variable "drink_names" {
     type = set(string)
 }
 
-resource "tls_private_key" "singleton_literal" {
-  algorithm   = "ECDSA"
-  ecdsa_curve = "P384"
+resource "helm_release" "singleton_literal" {
+  name       = "nginx-ingress-controller"
+
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "nginx-ingress-controller"
+
+  set {
+    name  = "service.type"
+    value = "ClusterIP"
+  }
 }
 
-resource "tls_private_key" "counted" {
+resource "helm_release" "counted" {
     count = var.instances
-    algorithm   = "ECDSA"
-    ecdsa_curve = "P384"
+    name       = "nginx-ingress-controller-${count.index}"
+
+    repository = "https://charts.bitnami.com/bitnami"
+    chart      = "nginx-ingress-controller"
+
+    set {
+        name  = "service.type"
+        value = "ClusterIP"
+    }
 }
 
-resource "tls_private_key" "foreached" {
+resource "helm_release" "foreached" {
     for_each = var.drink_names
-    algorithm   = each.key
-    ecdsa_curve = "P384"
+
+    name       = each.key
+
+    repository = "https://charts.bitnami.com/bitnami"
+    chart      = "nginx-ingress-controller"
+
+    set {
+        name  = "service.type"
+        value = "ClusterIP"
+    }
 }

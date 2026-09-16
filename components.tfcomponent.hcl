@@ -20,22 +20,29 @@ required_providers {
     version = "~> 3.2.2"
   }
 
-  tls = {
-    source = "hashicorp/tls"
-    version = "~> 4.4.1"
+  helm = {
+    source = "hashicorp/helm"
+    version = "2.17.0"
   }
 }
 
 provider "random" "this" {}
 provider "null" "this" {}
-provider "tls" "this" {
+provider "helm" "this" {
     config {
-        proxy {
-            url = component.pet.name
+        kubernetes = {
+            config_path = component.pet.name
         }
+
+        registries = [
+            {
+            url      = component.pet.name
+            username = "username"
+            password = "password"
+            },
+        ]
     }
 }
-
 component "coffee" {
     source = "./coffee"
     inputs = {
@@ -44,7 +51,7 @@ component "coffee" {
     }
 
     providers = {
-        tls = provider.tls.this
+        tls = provider.helm.this
     }
 }
 
