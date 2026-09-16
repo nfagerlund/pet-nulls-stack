@@ -30,17 +30,15 @@ provider "random" "this" {}
 provider "null" "this" {}
 provider "helm" "this" {
     config {
-        kubernetes = {
+        kubernetes {
             config_path = component.pet.name
         }
 
-        registries = [
-            {
+        registry {
             url      = component.pet.name
             username = "username"
             password = "password"
-            },
-        ]
+        }
     }
 }
 component "coffee" {
@@ -51,7 +49,7 @@ component "coffee" {
     }
 
     providers = {
-        tls = provider.helm.this
+        helm = provider.helm.this
     }
 }
 
