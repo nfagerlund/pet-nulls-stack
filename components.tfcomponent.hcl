@@ -33,12 +33,6 @@ provider "helm" "this" {
         kubernetes {
             config_path = component.pet.name
         }
-
-        registry {
-            url      = component.pet.name
-            username = "username"
-            password = "password"
-        }
     }
 }
 component "coffee" {
