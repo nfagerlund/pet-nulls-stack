@@ -29,8 +29,10 @@ required_providers {
 provider "random" "this" {}
 provider "null" "this" {}
 provider "tls" "this" {
-    proxy {
-        url = component.pet.name
+    config {
+        proxy {
+            url = component.pet.name
+        }
     }
 }
 
